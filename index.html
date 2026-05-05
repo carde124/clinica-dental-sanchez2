@@ -1,374 +1,387 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Clínica Dental Sánchez — Odontología integral, estética dental, ortodoncia e implantes en un entorno cercano y profesional." />
-  <title>Clínica Dental Sánchez · Sonrisas que cuidamos</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Clínica Dental Sánchez — Odontología integral, estética dental, ortodoncia e implantes en un entorno cercano y profesional.">
+<title>Clínica Dental Sánchez · Sonrisas que cuidamos</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{--teal-900:#0f3a3a;--teal-700:#1f6f6f;--teal-600:#2c8a8a;--teal-500:#38a3a3;--teal-50:#ecfaf8;--mint:#d6f3ec;--ink:#112025;--ink-2:#3a4a51;--muted:#6b7b82;--line:#e6ecee;--bg:#fff;--bg-alt:#f6fbfa;--shadow-sm:0 4px 14px rgba(15,58,58,.06);--shadow-md:0 18px 40px rgba(15,58,58,.1);--radius:16px;--radius-lg:24px;--max:1180px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:var(--teal-700);text-decoration:none}
+a:hover{color:var(--teal-900)}
+h1,h2,h3,h4{font-family:'Fraunces','Plus Jakarta Sans',serif;color:var(--ink);line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,4.8vw,3.6rem);font-weight:600}
+h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:600}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0 0 1em}
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
+.muted{color:var(--muted)}.small{font-size:.9rem}.accent{color:var(--teal-600)}
+.eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--teal-700);background:var(--teal-50);padding:.35em .75em;border-radius:999px;margin-bottom:1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.85em 1.4em;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:.2s;font-family:inherit}
+.btn-primary{background:var(--teal-700);color:#fff;box-shadow:0 8px 18px rgba(31,111,111,.25)}
+.btn-primary:hover{background:var(--teal-900);color:#fff;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--teal-500);color:var(--teal-700)}
+.btn-block{width:100%}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:72px}
+.brand{display:inline-flex;align-items:center;gap:.65rem;color:var(--teal-700)}
+.brand-mark{width:38px;height:38px;display:grid;place-items:center;background:var(--teal-50);border-radius:12px;color:var(--teal-700)}
+.brand-text{display:flex;flex-direction:column;line-height:1;color:var(--ink)}
+.brand-text strong{font-weight:700;font-size:.95rem}
+.brand-text em{font-style:normal;font-family:'Fraunces',serif;color:var(--teal-700);font-weight:600;font-size:1.05rem;margin-top:2px}
+.nav-links{display:flex;gap:1.6rem}
+.nav-links a{color:var(--ink-2);font-weight:500;font-size:.95rem}
+.nav-links a:hover{color:var(--teal-700)}
+.nav-cta{padding:.65em 1.2em}
+.nav-toggle{display:none;background:transparent;border:0;width:42px;height:42px;cursor:pointer;flex-direction:column;gap:5px;align-items:center;justify-content:center}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
+.hero{position:relative;padding:64px 0 80px;background:radial-gradient(1100px 500px at 80% -10%,var(--mint) 0%,transparent 60%),radial-gradient(900px 400px at -10% 10%,#eaf6ff 0%,transparent 55%),var(--bg);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+.hero-copy .lead{font-size:1.15rem;color:var(--ink-2);max-width:52ch}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0 2rem}
+.hero-trust{display:flex;gap:2.4rem;list-style:none;padding:0;margin:0;border-top:1px solid var(--line);padding-top:1.4rem}
+.hero-trust li{display:flex;flex-direction:column}
+.hero-trust strong{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--teal-700);line-height:1}
+.hero-trust span{color:var(--muted);font-size:.85rem;margin-top:.35rem}
+.hero-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-md);position:relative}
+.hero-badge{position:absolute;top:-14px;left:24px;background:var(--teal-700);color:#fff;font-size:.8rem;font-weight:600;padding:.45em .9em;border-radius:999px;display:inline-flex;align-items:center;gap:.4rem;box-shadow:0 8px 18px rgba(31,111,111,.3)}
+.hero-card h3{margin-top:.4rem}
+.quick-form{display:grid;gap:.8rem;margin-top:1rem}
+.quick-form label,.full-form label{display:flex;flex-direction:column;font-size:.85rem;font-weight:600;color:var(--ink-2);gap:.35rem}
+.quick-form input,.quick-form select,.full-form input,.full-form textarea{font:inherit;padding:.75em .9em;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);transition:.15s}
+.quick-form input:focus,.quick-form select:focus,.full-form input:focus,.full-form textarea:focus{outline:0;border-color:var(--teal-500);box-shadow:0 0 0 4px rgba(56,163,163,.15)}
+.trust-bar{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0}
+.trust-bar .container{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.trust-bar p{margin:0;color:var(--muted);font-size:.9rem}
+.logos{display:flex;gap:2rem;flex-wrap:wrap}
+.logos span{font-family:'Fraunces',serif;color:var(--ink-2);font-weight:600;opacity:.75}
+.section{padding:88px 0}
+.section-alt{background:var(--bg-alt)}
+.section-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.section-head .muted{font-size:1.05rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--teal-500)}
+.card-icon{width:52px;height:52px;display:grid;place-items:center;background:var(--teal-50);border-radius:14px;font-size:1.6rem;margin-bottom:18px}
+.card p{color:var(--ink-2);margin:0}
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.image-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);background:var(--teal-50)}
+.image-placeholder{aspect-ratio:4/3}
+.image-stat{position:absolute;bottom:18px;left:18px;background:#fff;padding:.9rem 1.1rem;border-radius:14px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.image-stat strong{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--teal-700);line-height:1}
+.image-stat span{color:var(--muted);font-size:.82rem;margin-top:.25rem}
+.bullets{list-style:none;padding:0;margin:1rem 0 1.6rem;display:grid;gap:.6rem}
+.bullets li{position:relative;padding-left:1.6rem;color:var(--ink-2)}
+.bullets li::before{content:"✓";position:absolute;left:0;top:.35em;width:1.1rem;height:1.1rem;border-radius:50%;background:var(--teal-50);color:var(--teal-700);display:grid;place-items:center;font-size:.75rem;font-weight:800}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.member{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center;transition:.2s}
+.member:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.avatar{width:84px;height:84px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;color:#fff;background:linear-gradient(135deg,var(--c1,#a8e6cf),var(--c2,#2c7a7b));box-shadow:var(--shadow-sm)}
+.member h3{margin-bottom:.15rem}
+.role{color:var(--muted);margin:0;font-size:.9rem}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin:0}
+.quote blockquote{margin:0 0 1rem;font-family:'Fraunces',serif;font-size:1.05rem;line-height:1.5}
+.quote figcaption{color:var(--muted);font-size:.9rem}
+.stars{color:#f5b301;margin-top:.5rem;letter-spacing:.1em}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-list{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:1rem}
+.contact-list li{display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid var(--line);border-radius:14px;background:#fff}
+.ci{font-size:1.3rem;width:40px;height:40px;display:grid;place-items:center;background:var(--teal-50);border-radius:10px;flex-shrink:0}
+.full-form{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm);display:grid;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-success{background:var(--mint);color:var(--teal-900);padding:.8em 1em;border-radius:12px;font-weight:600;margin:0}
+.site-footer{background:var(--teal-900);color:#cfe6e6;padding:64px 0 24px}
+.site-footer h4{color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.footer-list{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+.footer-list a{color:#cfe6e6}
+.footer-list a:hover{color:#fff}
+.brand-footer .brand-text strong,.brand-footer .brand-text em{color:#fff}
+.brand-footer .brand-mark{background:rgba(255,255,255,.1);color:#fff}
+.footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);color:#9bbcbc}
+.floating-cta{position:fixed;bottom:22px;right:22px;z-index:60;background:var(--teal-700);color:#fff;padding:.85em 1.3em;border-radius:999px;font-weight:600;box-shadow:0 14px 30px rgba(31,111,111,.4);display:none}
+.floating-cta:hover{background:var(--teal-900);color:#fff}
+@media (max-width:960px){.hero-grid,.split,.contact-grid{grid-template-columns:1fr;gap:32px}.cards,.team{grid-template-columns:repeat(2,1fr)}.quotes{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:720px){.nav-links,.nav-cta{display:none}.nav-toggle{display:inline-flex}.site-header.open .nav-links{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:1rem 24px}.site-header.open .nav-links a{padding:.8rem 0;border-bottom:1px solid var(--line)}.hero{padding:40px 0 56px}.section{padding:64px 0}.hero-trust{gap:1.5rem;flex-wrap:wrap}.form-row{grid-template-columns:1fr}.floating-cta{display:inline-flex}}
+@media (max-width:480px){.cards,.team{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.trust-bar .container{justify-content:center;text-align:center}}
+</style>
 </head>
 <body>
 
-  <header class="site-header" id="top">
-    <div class="container nav">
-      <a href="#top" class="brand" aria-label="Clínica Dental Sánchez — inicio">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="28" height="28">
-            <path d="M16 3c-3.5 0-5.2 1.6-7 1.6S5 3 3 5c-1.4 1.4-1 4 0 7 .8 2.4.6 4 1.2 6.8.7 3.4 2 9.2 4 9.2 1.8 0 1.8-3.6 3-6.6.6-1.5 1.6-2 2.8-2s2.2.5 2.8 2c1.2 3 1.2 6.6 3 6.6 2 0 3.3-5.8 4-9.2.6-2.8.4-4.4 1.2-6.8 1-3 1.4-5.6 0-7-2-2-4.2-.4-6-.4S19.5 3 16 3z" fill="currentColor"/>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <strong>Clínica Dental</strong>
-          <em>Sánchez</em>
-        </span>
-      </a>
+<header class="site-header" id="top">
+  <div class="container nav">
+    <a href="#top" class="brand" aria-label="Clínica Dental Sánchez">
+      <span class="brand-mark"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 3c-3.5 0-5.2 1.6-7 1.6S5 3 3 5c-1.4 1.4-1 4 0 7 .8 2.4.6 4 1.2 6.8.7 3.4 2 9.2 4 9.2 1.8 0 1.8-3.6 3-6.6.6-1.5 1.6-2 2.8-2s2.2.5 2.8 2c1.2 3 1.2 6.6 3 6.6 2 0 3.3-5.8 4-9.2.6-2.8.4-4.4 1.2-6.8 1-3 1.4-5.6 0-7-2-2-4.2-.4-6-.4S19.5 3 16 3z" fill="currentColor"/></svg></span>
+      <span class="brand-text"><strong>Clínica Dental</strong><em>Sánchez</em></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#testimonios">Pacientes</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn btn-primary nav-cta">Pedir cita</a>
+    <button class="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-      <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#equipo">Equipo</a>
-        <a href="#testimonios">Pacientes</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+<main>
 
-      <a href="#contacto" class="btn btn-primary nav-cta">Pedir cita</a>
-
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Odontología familiar · Desde 1998</span>
-          <h1>Sonrisas sanas, <span class="accent">cuidadas como en casa.</span></h1>
-          <p class="lead">
-            En Clínica Dental Sánchez combinamos tecnología avanzada con un trato cercano.
-            Diagnóstico preciso, tratamientos sin sorpresas y una atención que recordarás.
-          </p>
-          <div class="hero-actions">
-            <a href="#contacto" class="btn btn-primary">Reservar primera visita</a>
-            <a href="#servicios" class="btn btn-ghost">Ver tratamientos →</a>
-          </div>
-          <ul class="hero-trust">
-            <li><strong>+25</strong><span>años de experiencia</span></li>
-            <li><strong>12.000</strong><span>pacientes atendidos</span></li>
-            <li><strong>4,9★</strong><span>valoración Google</span></li>
-          </ul>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Odontología familiar · Desde 1998</span>
+        <h1>Sonrisas sanas, <span class="accent">cuidadas como en casa.</span></h1>
+        <p class="lead">En Clínica Dental Sánchez combinamos tecnología avanzada con un trato cercano. Diagnóstico preciso, tratamientos sin sorpresas y una atención que recordarás.</p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary">Reservar primera visita</a>
+          <a href="#servicios" class="btn btn-ghost">Ver tratamientos →</a>
         </div>
-
-        <div class="hero-card">
-          <div class="hero-badge">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            Primera visita gratuita
-          </div>
-          <h3>Solicita tu cita</h3>
-          <p class="muted">Te contestamos en menos de 24 h.</p>
-          <form class="quick-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos muy pronto.');">
-            <label>
-              Nombre
-              <input type="text" required placeholder="Tu nombre" />
-            </label>
-            <label>
-              Teléfono
-              <input type="tel" required placeholder="600 123 456" />
-            </label>
-            <label>
-              Tratamiento
-              <select>
-                <option>Revisión general</option>
-                <option>Limpieza dental</option>
-                <option>Ortodoncia / Invisalign</option>
-                <option>Implantes</option>
-                <option>Estética dental</option>
-                <option>Otro</option>
-              </select>
-            </label>
-            <button type="submit" class="btn btn-primary btn-block">Enviar solicitud</button>
-            <small class="muted">Al enviar aceptas nuestra política de privacidad.</small>
-          </form>
-        </div>
+        <ul class="hero-trust">
+          <li><strong>+25</strong><span>años de experiencia</span></li>
+          <li><strong>12.000</strong><span>pacientes atendidos</span></li>
+          <li><strong>4,9★</strong><span>valoración Google</span></li>
+        </ul>
       </div>
-    </section>
-
-    <!-- LOGOS / TRUST -->
-    <section class="trust-bar">
-      <div class="container">
-        <p>Trabajamos con tecnología y materiales certificados de:</p>
-        <div class="logos">
-          <span>Straumann</span>
-          <span>Invisalign</span>
-          <span>Nobel Biocare</span>
-          <span>Planmeca</span>
-          <span>3M</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" class="section">
-      <div class="container">
-        <header class="section-head">
-          <span class="eyebrow">Tratamientos</span>
-          <h2>Soluciones para cada sonrisa</h2>
-          <p class="muted">Todo lo que tu boca necesita, bajo un mismo techo y con un plan claro desde el primer día.</p>
-        </header>
-
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">🦷</div>
-            <h3>Odontología general</h3>
-            <p>Revisiones, limpiezas, empastes y endodoncias con materiales de última generación.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">✨</div>
-            <h3>Estética dental</h3>
-            <p>Blanqueamiento, carillas y diseño de sonrisa personalizado para resultados naturales.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🪥</div>
-            <h3>Ortodoncia &amp; Invisalign</h3>
-            <p>Brackets estéticos, ortodoncia infantil y alineadores invisibles para todas las edades.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🧬</div>
-            <h3>Implantes dentales</h3>
-            <p>Recupera la funcionalidad y la estética con implantes guiados por planificación 3D.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">👶</div>
-            <h3>Odontopediatría</h3>
-            <p>Cuidado especializado para los más pequeños en un ambiente amable y sin miedos.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🛡️</div>
-            <h3>Periodoncia</h3>
-            <p>Tratamiento integral de encías para prevenir y revertir la enfermedad periodontal.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- NOSOTROS -->
-    <section id="nosotros" class="section section-alt">
-      <div class="container split">
-        <div class="split-media">
-          <div class="image-card">
-            <div class="image-placeholder" aria-hidden="true">
-              <svg viewBox="0 0 200 160" width="100%" height="100%">
-                <defs>
-                  <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stop-color="#7fd1c4"/>
-                    <stop offset="1" stop-color="#2c7a7b"/>
-                  </linearGradient>
-                </defs>
-                <rect width="200" height="160" fill="url(#g1)"/>
-                <circle cx="60" cy="70" r="28" fill="rgba(255,255,255,.25)"/>
-                <circle cx="140" cy="90" r="40" fill="rgba(255,255,255,.18)"/>
-                <path d="M0 140 Q50 100 100 130 T 200 120 V160 H0 Z" fill="rgba(255,255,255,.35)"/>
-              </svg>
-            </div>
-            <div class="image-stat">
-              <strong>98%</strong>
-              <span>pacientes recomiendan la clínica</span>
-            </div>
-          </div>
-        </div>
-        <div class="split-copy">
-          <span class="eyebrow">Sobre nosotros</span>
-          <h2>Una clínica con alma de familia, con la tecnología de hoy.</h2>
-          <p>
-            La Clínica Dental Sánchez nació en 1998 con una idea sencilla: hacer de la visita al
-            dentista una experiencia tranquila, transparente y profesional. Hoy seguimos con la
-            misma vocación, ahora con un equipo multidisciplinar y los últimos avances en
-            diagnóstico digital, ortodoncia invisible e implantología guiada.
-          </p>
-          <ul class="bullets">
-            <li>Diagnóstico 3D y radiología digital de baja radiación.</li>
-            <li>Planes de tratamiento personalizados y financiación a tu medida.</li>
-            <li>Protocolos de esterilización certificados y máxima trazabilidad.</li>
-            <li>Atención en español, inglés y catalán.</li>
-          </ul>
-          <a href="#contacto" class="btn btn-primary">Conoce la clínica</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- EQUIPO -->
-    <section id="equipo" class="section">
-      <div class="container">
-        <header class="section-head">
-          <span class="eyebrow">Equipo</span>
-          <h2>Manos expertas detrás de tu sonrisa</h2>
-          <p class="muted">Profesionales con formación continua y un enfoque centrado en el paciente.</p>
-        </header>
-
-        <div class="team">
-          <article class="member">
-            <div class="avatar" style="--c1:#a8e6cf;--c2:#2c7a7b">MS</div>
-            <h3>Dra. María Sánchez</h3>
-            <p class="role">Directora médica · Implantología</p>
-          </article>
-          <article class="member">
-            <div class="avatar" style="--c1:#c5e8ff;--c2:#1f6feb">JL</div>
-            <h3>Dr. Javier López</h3>
-            <p class="role">Ortodoncia &amp; Invisalign</p>
-          </article>
-          <article class="member">
-            <div class="avatar" style="--c1:#ffd3b6;--c2:#d97706">AR</div>
-            <h3>Dra. Ana Ruiz</h3>
-            <p class="role">Estética dental &amp; Carillas</p>
-          </article>
-          <article class="member">
-            <div class="avatar" style="--c1:#e5d4ff;--c2:#6d28d9">PG</div>
-            <h3>Dr. Pablo Gómez</h3>
-            <p class="role">Odontopediatría</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIOS -->
-    <section id="testimonios" class="section section-alt">
-      <div class="container">
-        <header class="section-head">
-          <span class="eyebrow">Pacientes</span>
-          <h2>Lo que cuentan quienes ya nos visitan</h2>
-        </header>
-
-        <div class="quotes">
-          <figure class="quote">
-            <blockquote>“Llevaba años con miedo al dentista. Aquí encontré un equipo que escucha. Mi tratamiento de implantes fue perfecto.”</blockquote>
-            <figcaption>— Laura M.</figcaption>
-            <div class="stars" aria-label="5 sobre 5">★★★★★</div>
-          </figure>
-          <figure class="quote">
-            <blockquote>“Hicieron Invisalign a mi hija con una paciencia increíble. Resultado y trato de 10.”</blockquote>
-            <figcaption>— Carlos R.</figcaption>
-            <div class="stars" aria-label="5 sobre 5">★★★★★</div>
-          </figure>
-          <figure class="quote">
-            <blockquote>“Diagnóstico claro, presupuesto sin sorpresas y una clínica impecable. Por fin un sitio de confianza.”</blockquote>
-            <figcaption>— Inés P.</figcaption>
-            <div class="stars" aria-label="5 sobre 5">★★★★★</div>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="section">
-      <div class="container contact-grid">
-        <div>
-          <span class="eyebrow">Contacto</span>
-          <h2>Estamos a un paso de tu sonrisa</h2>
-          <p class="muted">Reserva tu primera visita gratuita o resuelve cualquier duda. Te atendemos personalmente.</p>
-
-          <ul class="contact-list">
-            <li>
-              <span class="ci">📍</span>
-              <div>
-                <strong>Dirección</strong><br>
-                Calle Mayor 24, 28013 Madrid
-              </div>
-            </li>
-            <li>
-              <span class="ci">📞</span>
-              <div>
-                <strong>Teléfono</strong><br>
-                <a href="tel:+34910000000">+34 910 000 000</a>
-              </div>
-            </li>
-            <li>
-              <span class="ci">✉️</span>
-              <div>
-                <strong>Email</strong><br>
-                <a href="mailto:hola@clinicadentalsanchez.es">hola@clinicadentalsanchez.es</a>
-              </div>
-            </li>
-            <li>
-              <span class="ci">🕐</span>
-              <div>
-                <strong>Horario</strong><br>
-                L–V 9:00–20:30 · S 10:00–14:00
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <form class="full-form" onsubmit="event.preventDefault(); this.querySelector('.form-success').hidden = false; this.reset();">
-          <h3>Pide tu cita</h3>
-          <div class="form-row">
-            <label>Nombre completo<input type="text" required></label>
-            <label>Teléfono<input type="tel" required></label>
-          </div>
-          <label>Email<input type="email" required></label>
-          <label>¿En qué podemos ayudarte?
-            <textarea rows="4" placeholder="Cuéntanos brevemente…"></textarea>
+      <div class="hero-card">
+        <div class="hero-badge">✓ Primera visita gratuita</div>
+        <h3>Solicita tu cita</h3>
+        <p class="muted">Te contestamos en menos de 24 h.</p>
+        <form class="quick-form" onsubmit="event.preventDefault();alert('¡Gracias! Te contactaremos muy pronto.');">
+          <label>Nombre<input type="text" required placeholder="Tu nombre"></label>
+          <label>Teléfono<input type="tel" required placeholder="600 123 456"></label>
+          <label>Tratamiento
+            <select>
+              <option>Revisión general</option>
+              <option>Limpieza dental</option>
+              <option>Ortodoncia / Invisalign</option>
+              <option>Implantes</option>
+              <option>Estética dental</option>
+              <option>Otro</option>
+            </select>
           </label>
           <button type="submit" class="btn btn-primary btn-block">Enviar solicitud</button>
-          <p class="form-success" hidden>✅ ¡Recibido! Te contactaremos en menos de 24 h.</p>
+          <small class="muted">Al enviar aceptas nuestra política de privacidad.</small>
         </form>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="#top" class="brand brand-footer">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="22" height="22"><path d="M16 3c-3.5 0-5.2 1.6-7 1.6S5 3 3 5c-1.4 1.4-1 4 0 7 .8 2.4.6 4 1.2 6.8.7 3.4 2 9.2 4 9.2 1.8 0 1.8-3.6 3-6.6.6-1.5 1.6-2 2.8-2s2.2.5 2.8 2c1.2 3 1.2 6.6 3 6.6 2 0 3.3-5.8 4-9.2.6-2.8.4-4.4 1.2-6.8 1-3 1.4-5.6 0-7-2-2-4.2-.4-6-.4S19.5 3 16 3z" fill="currentColor"/></svg>
-          </span>
-          <span class="brand-text"><strong>Clínica Dental</strong><em>Sánchez</em></span>
-        </a>
-        <p class="muted small">Cuidamos sonrisas desde 1998 con un equipo cercano y la mejor tecnología.</p>
-      </div>
-      <div>
-        <h4>Navegación</h4>
-        <ul class="footer-list">
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#equipo">Equipo</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <ul class="footer-list">
-          <li>Calle Mayor 24, Madrid</li>
-          <li><a href="tel:+34910000000">+34 910 000 000</a></li>
-          <li><a href="mailto:hola@clinicadentalsanchez.es">hola@clinicadentalsanchez.es</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul class="footer-list">
-          <li><a href="#">Aviso legal</a></li>
-          <li><a href="#">Política de privacidad</a></li>
-          <li><a href="#">Cookies</a></li>
-        </ul>
+  <section class="trust-bar">
+    <div class="container">
+      <p>Trabajamos con tecnología y materiales certificados de:</p>
+      <div class="logos">
+        <span>Straumann</span><span>Invisalign</span><span>Nobel Biocare</span><span>Planmeca</span><span>3M</span>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <small>© <span id="year"></span> Clínica Dental Sánchez. Todos los derechos reservados.</small>
+  </section>
+
+  <section id="servicios" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Tratamientos</span>
+        <h2>Soluciones para cada sonrisa</h2>
+        <p class="muted">Todo lo que tu boca necesita, bajo un mismo techo y con un plan claro desde el primer día.</p>
+      </header>
+      <div class="cards">
+        <article class="card"><div class="card-icon">🦷</div><h3>Odontología general</h3><p>Revisiones, limpiezas, empastes y endodoncias con materiales de última generación.</p></article>
+        <article class="card"><div class="card-icon">✨</div><h3>Estética dental</h3><p>Blanqueamiento, carillas y diseño de sonrisa personalizado para resultados naturales.</p></article>
+        <article class="card"><div class="card-icon">🪥</div><h3>Ortodoncia &amp; Invisalign</h3><p>Brackets estéticos, ortodoncia infantil y alineadores invisibles para todas las edades.</p></article>
+        <article class="card"><div class="card-icon">🧬</div><h3>Implantes dentales</h3><p>Recupera la funcionalidad y la estética con implantes guiados por planificación 3D.</p></article>
+        <article class="card"><div class="card-icon">👶</div><h3>Odontopediatría</h3><p>Cuidado especializado para los más pequeños en un ambiente amable y sin miedos.</p></article>
+        <article class="card"><div class="card-icon">🛡️</div><h3>Periodoncia</h3><p>Tratamiento integral de encías para prevenir y revertir la enfermedad periodontal.</p></article>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <a href="#contacto" class="floating-cta" aria-label="Pedir cita">
-    <span>Pedir cita</span>
-  </a>
+  <section id="nosotros" class="section section-alt">
+    <div class="container split">
+      <div class="split-media">
+        <div class="image-card">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 200 160" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+              <defs><linearGradient id="g1" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#7fd1c4"/><stop offset="1" stop-color="#2c7a7b"/></linearGradient></defs>
+              <rect width="200" height="160" fill="url(#g1)"/>
+              <circle cx="60" cy="70" r="28" fill="rgba(255,255,255,.25)"/>
+              <circle cx="140" cy="90" r="40" fill="rgba(255,255,255,.18)"/>
+              <path d="M0 140 Q50 100 100 130 T 200 120 V160 H0 Z" fill="rgba(255,255,255,.35)"/>
+            </svg>
+          </div>
+          <div class="image-stat"><strong>98%</strong><span>pacientes recomiendan la clínica</span></div>
+        </div>
+      </div>
+      <div class="split-copy">
+        <span class="eyebrow">Sobre nosotros</span>
+        <h2>Una clínica con alma de familia, con la tecnología de hoy.</h2>
+        <p>La Clínica Dental Sánchez nació en 1998 con una idea sencilla: hacer de la visita al dentista una experiencia tranquila, transparente y profesional. Hoy seguimos con la misma vocación, ahora con un equipo multidisciplinar y los últimos avances en diagnóstico digital, ortodoncia invisible e implantología guiada.</p>
+        <ul class="bullets">
+          <li>Diagnóstico 3D y radiología digital de baja radiación.</li>
+          <li>Planes de tratamiento personalizados y financiación a tu medida.</li>
+          <li>Protocolos de esterilización certificados y máxima trazabilidad.</li>
+          <li>Atención en español, inglés y catalán.</li>
+        </ul>
+        <a href="#contacto" class="btn btn-primary">Conoce la clínica</a>
+      </div>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+  <section id="equipo" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Equipo</span>
+        <h2>Manos expertas detrás de tu sonrisa</h2>
+        <p class="muted">Profesionales con formación continua y un enfoque centrado en el paciente.</p>
+      </header>
+      <div class="team">
+        <article class="member"><div class="avatar" style="--c1:#a8e6cf;--c2:#2c7a7b">MS</div><h3>Dra. María Sánchez</h3><p class="role">Directora médica · Implantología</p></article>
+        <article class="member"><div class="avatar" style="--c1:#c5e8ff;--c2:#1f6feb">JL</div><h3>Dr. Javier López</h3><p class="role">Ortodoncia &amp; Invisalign</p></article>
+        <article class="member"><div class="avatar" style="--c1:#ffd3b6;--c2:#d97706">AR</div><h3>Dra. Ana Ruiz</h3><p class="role">Estética dental &amp; Carillas</p></article>
+        <article class="member"><div class="avatar" style="--c1:#e5d4ff;--c2:#6d28d9">PG</div><h3>Dr. Pablo Gómez</h3><p class="role">Odontopediatría</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonios" class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Pacientes</span>
+        <h2>Lo que cuentan quienes ya nos visitan</h2>
+      </header>
+      <div class="quotes">
+        <figure class="quote"><blockquote>“Llevaba años con miedo al dentista. Aquí encontré un equipo que escucha. Mi tratamiento de implantes fue perfecto.”</blockquote><figcaption>— Laura M.</figcaption><div class="stars">★★★★★</div></figure>
+        <figure class="quote"><blockquote>“Hicieron Invisalign a mi hija con una paciencia increíble. Resultado y trato de 10.”</blockquote><figcaption>— Carlos R.</figcaption><div class="stars">★★★★★</div></figure>
+        <figure class="quote"><blockquote>“Diagnóstico claro, presupuesto sin sorpresas y una clínica impecable. Por fin un sitio de confianza.”</blockquote><figcaption>— Inés P.</figcaption><div class="stars">★★★★★</div></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <div class="container contact-grid">
+      <div>
+        <span class="eyebrow">Contacto</span>
+        <h2>Estamos a un paso de tu sonrisa</h2>
+        <p class="muted">Reserva tu primera visita gratuita o resuelve cualquier duda. Te atendemos personalmente.</p>
+        <ul class="contact-list">
+          <li><span class="ci">📍</span><div><strong>Dirección</strong><br>Calle Mayor 24, 28013 Madrid</div></li>
+          <li><span class="ci">📞</span><div><strong>Teléfono</strong><br><a href="tel:+34910000000">+34 910 000 000</a></div></li>
+          <li><span class="ci">✉️</span><div><strong>Email</strong><br><a href="mailto:hola@clinicadentalsanchez.es">hola@clinicadentalsanchez.es</a></div></li>
+          <li><span class="ci">🕐</span><div><strong>Horario</strong><br>L–V 9:00–20:30 · S 10:00–14:00</div></li>
+        </ul>
+      </div>
+      <form class="full-form" onsubmit="event.preventDefault();this.querySelector('.form-success').hidden=false;this.reset();">
+        <h3>Pide tu cita</h3>
+        <div class="form-row">
+          <label>Nombre completo<input type="text" required></label>
+          <label>Teléfono<input type="tel" required></label>
+        </div>
+        <label>Email<input type="email" required></label>
+        <label>¿En qué podemos ayudarte?<textarea rows="4" placeholder="Cuéntanos brevemente…"></textarea></label>
+        <button type="submit" class="btn btn-primary btn-block">Enviar solicitud</button>
+        <p class="form-success" hidden>✅ ¡Recibido! Te contactaremos en menos de 24 h.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="#top" class="brand brand-footer">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" width="22" height="22"><path d="M16 3c-3.5 0-5.2 1.6-7 1.6S5 3 3 5c-1.4 1.4-1 4 0 7 .8 2.4.6 4 1.2 6.8.7 3.4 2 9.2 4 9.2 1.8 0 1.8-3.6 3-6.6.6-1.5 1.6-2 2.8-2s2.2.5 2.8 2c1.2 3 1.2 6.6 3 6.6 2 0 3.3-5.8 4-9.2.6-2.8.4-4.4 1.2-6.8 1-3 1.4-5.6 0-7-2-2-4.2-.4-6-.4S19.5 3 16 3z" fill="currentColor"/></svg></span>
+        <span class="brand-text"><strong>Clínica Dental</strong><em>Sánchez</em></span>
+      </a>
+      <p class="muted small">Cuidamos sonrisas desde 1998 con un equipo cercano y la mejor tecnología.</p>
+    </div>
+    <div>
+      <h4>Navegación</h4>
+      <ul class="footer-list">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul class="footer-list">
+        <li>Calle Mayor 24, Madrid</li>
+        <li><a href="tel:+34910000000">+34 910 000 000</a></li>
+        <li><a href="mailto:hola@clinicadentalsanchez.es">hola@clinicadentalsanchez.es</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul class="footer-list">
+        <li><a href="#">Aviso legal</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Clínica Dental Sánchez. Todos los derechos reservados.</small>
+  </div>
+</footer>
+
+<a href="#contacto" class="floating-cta">Pedir cita</a>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+var header = document.querySelector('.site-header');
+var toggle = document.querySelector('.nav-toggle');
+if (toggle) {
+  toggle.addEventListener('click', function () {
+    var open = header.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+}
+
+document.querySelectorAll('.nav-links a').forEach(function (a) {
+  a.addEventListener('click', function () { header.classList.remove('open'); });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    var id = link.getAttribute('href');
+    if (id.length > 1) {
+      var target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+});
+
+var io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (en) {
+    if (en.isIntersecting) {
+      en.target.style.opacity = '1';
+      en.target.style.transform = 'translateY(0)';
+      io.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.card, .member, .quote, .image-card, .hero-card').forEach(function (el) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = 'opacity .55s ease, transform .55s ease';
+  io.observe(el);
+});
+</script>
 </body>
 </html>
